@@ -1,15 +1,5 @@
 rem you need to run this shellscript as an administrator
 
-rem cleanup
-minikube stop
-minikube delete
-del %systemroot%\system32\kubectl.exe
-del %systemroot%\system32\minikube.exe
-del %userprofile%\.minikube
-del %userprofile%\.kube
-
-IF "%1"=="CLEAN" exit /B 0
-
 rem install minikube
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.2/bin/windows/amd64/kubectl.exe
 move kubectl.exe %systemroot%\system32
@@ -21,5 +11,13 @@ minikube version
 minikube start
 minikube status
 minikube dashboard
+
+rem create resources
+mkdir %userprofile%\cluster
+cd %userprofile%\cluster
+
+git clone https://github.com/mulargui/healthylinkx-mysql.git
+git clone https://github.com/mulargui/healthylinkx-api-in-node.git
+git clone https://github.com/mulargui/healthylinkx-ux.git
 
 exit /B 0
