@@ -1,7 +1,7 @@
 
-%userprofile%\cluster\healthylinkx-mysql\k8s\setup
-%userprofile%\cluster\healthylinkx-api-in-node\k8s\setup
-%userprofile%\cluster\healthylinkx-ux\k8s\setup
+call %userprofile%\cluster\healthylinkx-mysql\k8s\setup
+call %userprofile%\cluster\healthylinkx-api-in-node\k8s\setup
+call %userprofile%\cluster\healthylinkx-ux\k8s\setup
 
 exit /B 0
 
