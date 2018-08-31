@@ -12,6 +12,14 @@ minikube start
 minikube status
 minikube dashboard
 
+rem install helm
+curl -LO https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-windows-amd64.zip
+unzip -j helm-v2.10.0-windows-amd64.zip "windows-amd64/helm.exe"
+del helm-v2.10.0-windows-amd64.zip
+move helm.exe %systemroot%\system32
+
+helm init
+
 rem create resources
 mkdir %userprofile%\cluster
 cd %userprofile%\cluster
