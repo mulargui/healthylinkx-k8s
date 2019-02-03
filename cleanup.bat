@@ -1,18 +1,7 @@
-rem you need to run this shellscript as an administrator
 
-rem cleanup minikube 
-minikube stop
-minikube delete
-del %systemroot%\system32\kubectl.exe
-del %systemroot%\system32\minikube.exe
-rmdir %userprofile%\.minikube /s /q
-rmdir %userprofile%\.kube /s /q
-
-rem cleanup helm
-del %systemroot%\system32\helm.exe
-rmdir %userprofile%\.helm /s /q
-
-rem cleanup resources
-rmdir %userprofile%\cluster /s /q
+rem cleanup each service
+call %~dp0..\healthylinkx-mysql\k8s\cleanup 
+call %~dp0..\healthylinkx-api-in-node\k8s\cleanup
+call %~dp0..\healthylinkx-ux\k8s\cleanup
 
 exit /B 0
