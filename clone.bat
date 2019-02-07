@@ -1,6 +1,6 @@
 
 rem clone the three repos one level up, default is in this directory
-cd ..
+cd %~dp0..
 git clone https://github.com/mulargui/healthylinkx-mysql.git
 git clone https://github.com/mulargui/healthylinkx-api-in-node.git
 git clone https://github.com/mulargui/healthylinkx-ux.git
