@@ -9,7 +9,7 @@ move kubectl.exe %systemroot%\system32
 
 rem install minikube
 rem https://github.com/kubernetes/minikube/releases
-set k8ver=v0.33.1
+set k8ver=v0.35.0
 curl -LO https://storage.googleapis.com/minikube/releases/%k8ver%/minikube-windows-amd64.exe
 ren minikube-windows-amd64.exe minikube.exe
 move minikube.exe %systemroot%\system32
@@ -20,7 +20,7 @@ minikube status
 
 rem install helm
 rem https://github.com/helm/helm/releases
-set helmver=v2.12.3
+set helmver=v2.13.0
 curl -LO https://storage.googleapis.com/kubernetes-helm/helm-%helmver%-windows-amd64.zip
 powershell -command "Expand-Archive .\helm-%helmver%-windows-amd64.zip .\helm"
 move .\helm\windows-amd64\helm.exe %systemroot%\system32
